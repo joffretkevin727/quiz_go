@@ -1,27 +1,20 @@
-# 🧮 Calculatrice Web en Go
+# Projet Quiz - Phase 2 (Extension Web)
 
-Une application web robuste et ergonomique permettant d'effectuer des opérations arithmétiques, développée en **Go** avec une architecture modulaire.
+Ce projet est une application web de quiz interactive développée en **Go**. Il permet de tester ses connaissances sur **Git** et **Golang** à travers une interface web moderne.
 
 ---
 
 ## 🚀 Fonctionnalités
-* **Opérations arithmétiques** : Addition, Soustraction, Multiplication et Division.
-* **Interface intuitive** : Saisie numérique sécurisée et sélection d'opérations via boutons radio.
-* **Gestion d'erreurs avancée** :
-    * Validation des types de données (numérique uniquement).
-    * Blocage de la **division par zéro** avec message d'alerte.
-    * Double validation : Côté client (HTML) et côté serveur (Go).
-
-## 🛠️ Technologies utilisées
-* **Backend** : Go (Golang) - Utilisation de `net/http` et `html/template`.
-* **Frontend** : HTML / CSS (Design moderne sans framework).
-* **Architecture** : Pattern MVC simplifié (Model / View / Controller).
+* **Affichage dynamique** : Les questions s'affichent une par une pour une meilleure expérience utilisateur.
+* **Validation en temps réel** : Le programme indique si la réponse saisie est correcte ou incorrecte après chaque validation.
+* **Gestion du score** : Le score est calculé tout au long du quiz et affiché à la fin.
+* **Interface Web** : Utilisation de templates HTML et de fichiers CSS pour une présentation propre.
 
 ---
 
 ## 📁 Structure du projet
 ```text
-calculatrice/
+quiz-go/
 ├── controller/
 │   └── controller.go   # Logique métier et gestion des requêtes
 ├── router/
@@ -36,10 +29,10 @@ calculatrice/
 
 🛠️ Installation et Lancement
 1. Cloner le dépôt :
-    git clone https://github.com/joffretkevin727/calculatrice.git
+    git clone https://github.com/joffretkevin727/quiz-go.git
 
 2. Lancer le serveur :
-    cd .\calculatrice\
+    cd .\quiz-go\
     go run main.go
 
 3. Accéder à l'application :
