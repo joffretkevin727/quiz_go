@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Go</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <h1>Quiz</h1>
+
+    {{if .Finished}}
+    <div class="score-box">
+        <h2>Score : {{.Score}} / {{len .Questions}}</h2>
+        <a href="/home" class="btn-retry">Recommencer</a>
+    </div>
+    {{else}}
+    <form action="/quiz" method="POST">
+        {{$q := index .Questions .CurrentIndex}}
+        <p>{{$q.Text}}</p>
+
+        {{if .ShowResult}}
+        <div class="result {{if eq .LastResult " Incorrect..."}}error{{end}}">
+            {{.LastResult}}
+        </div>
+        <input type="text" value="{{$q.Answer}}" disabled>
+        {{else}}
+        <input type="text" name="answer" required autofocus>
+        {{end}}
+
+        <input type="hidden" name="index" value="{{.CurrentIndex}}">
+        <input type="hidden" name="score" value="{{.Score}}">
+        <input type="hidden" name="show_result" value="{{.ShowResult}}">
+
+        <button type="submit">
+            {{.ButtonText}}
+        </button>
+    </form>
+    {{end}}
+</body>
+
+</html>
