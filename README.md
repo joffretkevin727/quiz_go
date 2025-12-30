@@ -1,4 +1,4 @@
-# Projet Quiz - Phase 2 (Extension Web)
+# Projet Quiz
 
 Ce projet est une application web de quiz interactive développée en **Go**. Il permet de tester ses connaissances sur **Git** et **Golang** à travers une interface web moderne.
 
